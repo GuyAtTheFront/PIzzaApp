@@ -1,0 +1,28 @@
+<!-- <p>pizza-form works!</p> -->
+
+<h1> Panucci's Pizza </h1>
+
+<h3>Select a pizza</h3>
+
+<form [formGroup]="pizzaForm" (ngSubmit)="processForm()">
+    <div>
+        <div *ngFor="let option of pizzaOptions; let idx=index">
+            <input type="radio" [value]="option" [id]="idx" formControlName="pizza">
+            <label [for]="idx">{{ option | titlecase }}</label>
+        </div>
+    </div>
+    <br>
+    <div>
+        Size: <select name="" id="" formControlName="size">
+            <option *ngFor="let option of sizeOptions" [value]="option">{{ option | titlecase }}</option>
+        </select>
+    </div>  
+    <br>
+    <div>
+        Quantity: <input type="number" formControlName="quantity">
+    </div>
+    <br>
+    <div>
+        <button type="submit">Next</button>
+    </div>
+</form>

@@ -1,0 +1,31 @@
+<!-- <p>details-form works!</p> -->
+<h1>Order Delivery Details</h1>
+
+<form [formGroup]="detailForm" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" formControlName="name"></td>
+        </tr>
+        <tr>
+            <td>Address: </td>
+            <td><input type="text" formControlName="address"></td>
+        </tr>
+        <tr>
+            <td>Phone: </td>
+            <td><input type="text" formControlName="phone"></td>
+        </tr>
+        <tr>
+            <td>Rush: </td>
+            <td><input type="checkbox" formControlName="rush"></td>
+        </tr>
+        <tr>
+            <td>Comment: </td>
+            <td><textarea cols="30" rows="10" formControlName="comment"></textarea></td>
+        </tr>
+        <tr>
+            <button type="button" (click) = "onCancel()">Cancel</button>
+            <button type="submit">Submit</button>
+        </tr>
+    </table>
+</form>
